@@ -15,7 +15,7 @@
      @can('edit',$new)
      <a href="{{route('news.edit',['id'=>$new->id])}}">Исправить <i class="fa fa-edit"></i></a>
       @endcan
-      
+      <a href="{{route('news.show',['id'=>$new->id])}}"> Комментарий<i class="fa fa-comments-o" aria-hidden="true"></i></a>
     </div> 
   </div>
   @empty

@@ -45,7 +45,7 @@ class StoreNews implements Store
 
     public function show($model)
     {
-        return $model;
+        return view('news.show')->with(['news'=>News::with('comments')->find($model->id)]);
     }
 
     public function update($model,$listener=null){

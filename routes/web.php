@@ -31,3 +31,6 @@ Route::get('/profile/{user}','UserController@show')->name('profile');
 	Route::get('auth/linkedin/callback', 'LinkedInController@handleProviderCallback');
 
 Route::resource('news','NewsController');
+Route::post('news/{new}/comments/','CommentsController@store')->name('comments.store');
+//Route::resource('comments','CommentsController');
+//Route::get('comments/{news}', ['as'=>'comments.store', 'CommentsController@store']);

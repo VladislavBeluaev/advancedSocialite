@@ -27,7 +27,7 @@ class SocialiteLoginUser implements LoginUser{
         $this->findSocialiteProfileOrCreate($provider_name)->findAppProfileOrCreate();
         
         auth()->login($this->user);
-        //event(new SendWelcomeEmailEvent($this->user));
+        event(new SendWelcomeEmailEvent($this->user));
         return $listener->userHasLogIn($this->user);
     }
 
